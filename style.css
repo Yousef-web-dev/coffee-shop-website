@@ -247,7 +247,7 @@ section {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background-image: url(imgs/home.webp);
+  background-image: url('imgs/home.webp');
   background-repeat: no-repeat;
   background-size: cover;
 }
