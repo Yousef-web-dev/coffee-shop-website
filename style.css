@@ -247,7 +247,7 @@ section {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: url(imgs/gedesby1989-coffee-3160890.jpg);
+  background: url("imgs/home.webp");
   background-repeat: no-repeat;
   background-size: cover;
 }
