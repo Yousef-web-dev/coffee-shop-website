@@ -60,7 +60,7 @@ document.getElementById("whatsappForm").addEventListener("submit", (e) => {
   const phone = document.getElementById("userPhone").value;
   const myPhoneNumber = "201157700392";
 
-  const message = `Hello, I'd like to get in touch wuth you :%0A `;
+  const message = `Hello, I'd like to get in touch with you :%0A `;
   +`👤 *Name:* ${encodeURIComponent(name)}%0A` +
     `✉️ *Email;:* ${encodeURIComponent(email)}%0A` +
     `📱 *Phone:* ${encodeURIComponent(phone)}%0A`;

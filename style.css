@@ -584,13 +584,14 @@ section {
 }
 .blogs .box-container .box .content {
   padding: 2.5rem;
-
+  
 }
 .blogs .box-container .box .content .title {
   font-size: 2.5rem;
   line-height: 1.5;
   color: #fff;
     transition: 0.3s;
+    
 }
 .blogs .box-container .box .content .title:hover {
   color: var(--main-color);
