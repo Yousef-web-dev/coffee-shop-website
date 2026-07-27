@@ -20,15 +20,16 @@
       type="image/x-icon"
       loading="lazy"
     />
+    <meta
+      name="description"
+      content="Enjoy fresh morning coffee and delicious treats at our Coffee Shop. Order now!"
+    />
     <title>Coffee</title>
   </head>
   <body>
     <!-- header starts -->
     <header
       class="header"
-      data-aos="fade-down"
-      data-aos-easing="linear"
-      data-aos-duration="1500"
     >
       <a href="#" class="logo">
         <img src="imgs/logo_optimized_.webp" alt="logo" loading="lazy" />
@@ -57,42 +58,7 @@
       </div>
 
       <div class="cart-items-container">
-        <div class="cart-item">
-          <span class="fas fa-times"></span>
-          <img src="imgs/beans1.webp" alt="" loading="lazy" />
-          <div class="content">
-            <h3>cart item 01</h3>
-            <div class="price">$15.99</div>
-          </div>
-        </div>
-
-        <div class="cart-item">
-          <span class="fas fa-times"></span>
-          <img src="imgs/beans2.webp" alt="" loading="lazy" />
-          <div class="content">
-            <h3>cart item 01</h3>
-            <div class="price">$15.99</div>
-          </div>
-        </div>
-
-        <div class="cart-item">
-          <span class="fas fa-times"></span>
-          <img src="imgs/beans3.webp" alt="" loading="lazy" />
-          <div class="content">
-            <h3>cart item 01</h3>
-            <div class="price">$15.99</div>
-          </div>
-        </div>
-
-        <div class="cart-item">
-          <span class="fas fa-times"></span>
-          <img src="imgs/beans4.webp" alt="" loading="lazy" />
-          <div class="content">
-            <h3>cart item 01</h3>
-            <div class="price">$15.99</div>
-          </div>
-        </div>
-        <a href="#" class="btn">checkout now</a>
+        <!-- Cart items are rendered dynamically by script.js -->
       </div>
     </header>
     <!-- header end -->
@@ -101,15 +67,15 @@
 
     <section class="home" id="home">
       <div class="content">
-        <h3>
+        <h1>
           fresh coffee in <br />
           the morning
-        </h3>
+        </h1>
         <p>
           Start your day with the rich taste of handpicked, freshly roasted
           coffee beans crafted to perfection.
         </p>
-        <a href="#" class="btn">get yours now</a>
+        <a href="#about" class="btn">get yours now</a>
       </div>
     </section>
     <!-- home end  -->
@@ -117,10 +83,10 @@
     <!-- about start -->
 
     <section class="about" id="about">
-      <h1 class="heading"><span>about </span>us</h1>
+      <h2 class="heading"><span>about </span>us</h2>
       <div class="row">
         <div class="image">
-          <img src="imgs/about.webp" alt="" loading="lazy" />
+          <img src="imgs/about.webp" alt="coffee shop interior" loading="lazy" />
         </div>
 
         <div
@@ -152,43 +118,43 @@
 
     <div data-aos="fade-up" data-aos-duration="3000">
       <section class="menu" id="menu">
-        <h1 class="heading">our <span>menu</span></h1>
+        <h2 class="heading">our <span>menu</span></h2>
         <div class="box-container">
-          <div class="box">
-            <img src="imgs/minu1_optimized_.webp" alt="" loading="lazy" />
-            <h3>tasty and healthy</h3>
+          <div class="box" data-id="product-01">
+            <img src="imgs/minu1_optimized_.webp" alt="espresso coffee cup" loading="lazy" />
+            <h3>espresso</h3>
             <div class="price">$15.99 <span>$20.99</span></div>
-            <a href="#menu" class="btn add-to-cart-btn">add to cart</a>
+            <a href="#menu" class="btn add-to-cart-btn" data-name="Espresso" data-price="15.99" data-img="imgs/minu1_optimized_.webp">add to cart</a>
           </div>
-          <div class="box">
-            <img src="imgs/minu2_optimized_.webp" alt="" loading="lazy" />
-            <h3>tasty and healthy</h3>
+          <div class="box" data-id="product-02">
+            <img src="imgs/minu2_optimized_.webp" alt="cappuccino coffee cup" loading="lazy" />
+            <h3>cappuccino</h3>
             <div class="price">$15.99 <span>$20.99</span></div>
-            <a href="#menu" class="btn add-to-cart-btn">add to cart</a>
+            <a href="#menu" class="btn add-to-cart-btn" data-name="Cappuccino" data-price="15.99" data-img="imgs/minu2_optimized_.webp">add to cart</a>
           </div>
-          <div class="box">
-            <img src="imgs/minu3_optimized_.webp" alt="" loading="lazy" />
-            <h3>tasty and healthy</h3>
+          <div class="box" data-id="product-03">
+            <img src="imgs/minu3_optimized_.webp" alt="latte coffee cup" loading="lazy" />
+            <h3>latte</h3>
             <div class="price">$15.99 <span>$20.99</span></div>
-            <a href="#menu" class="btn add-to-cart-btn">add to cart</a>
+            <a href="#menu" class="btn add-to-cart-btn" data-name="Latte" data-price="15.99" data-img="imgs/minu3_optimized_.webp">add to cart</a>
           </div>
-          <div class="box">
-            <img src="imgs/minu4_optimized_.webp" alt="" loading="lazy" />
-            <h3>tasty and healthy</h3>
+          <div class="box" data-id="product-04">
+            <img src="imgs/minu4_optimized_.webp" alt="mocha coffee cup" loading="lazy" />
+            <h3>mocha</h3>
             <div class="price">$15.99 <span>$20.99</span></div>
-            <a href="#menu" class="btn add-to-cart-btn">add to cart</a>
+            <a href="#menu" class="btn add-to-cart-btn" data-name="Mocha" data-price="15.99" data-img="imgs/minu4_optimized_.webp">add to cart</a>
           </div>
-          <div class="box">
-            <img src="imgs/minu5_optimized_.webp" alt="" loading="lazy" />
-            <h3>tasty and healthy</h3>
+          <div class="box" data-id="product-05">
+            <img src="imgs/minu5_optimized_.webp" alt="americano coffee cup" loading="lazy" />
+            <h3>americano</h3>
             <div class="price">$15.99 <span>$20.99</span></div>
-            <a href="#menu" class="btn add-to-cart-btn">add to cart</a>
+            <a href="#menu" class="btn add-to-cart-btn" data-name="Americano" data-price="15.99" data-img="imgs/minu5_optimized_.webp">add to cart</a>
           </div>
-          <div class="box">
-            <img src="imgs/minu6_optimized_.webp" alt="" loading="lazy" />
-            <h3>tasty and healthy</h3>
+          <div class="box" data-id="product-06">
+            <img src="imgs/minu6_optimized_.webp" alt="macchiato coffee cup" loading="lazy" />
+            <h3>macchiato</h3>
             <div class="price">$15.99 <span>$20.99</span></div>
-            <a href="#menu" class="btn add-to-cart-btn">add to cart</a>
+            <a href="#menu" class="btn add-to-cart-btn" data-name="Macchiato" data-price="15.99" data-img="imgs/minu6_optimized_.webp">add to cart</a>
           </div>
         </div>
       </section>
@@ -199,24 +165,24 @@
 
     <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
       <section class="products" id="products">
-        <h1 class="heading">our <span>products</span></h1>
+        <h2 class="heading">our <span>products</span></h2>
         <div class="box-container">
           <div class="box">
             <div class="icons">
-              <a href="#" class="fas fa-shopping-cart"></a>
-              <a href="#" class="fas fa-heart"></a>
-              <a href="#" class="fas fa-eye"></a>
+              <a href="#" class="fas fa-shopping-cart add-to-cart-btn" data-name="Roasted Coffee Beans" data-price="15.99" data-img="imgs/product1.webp" aria-label="add roasted coffee beans to cart"></a>
+              <a href="#" class="fas fa-heart" aria-label="add to wishlist"></a>
+              <a href="#" class="fas fa-eye" aria-label="quick view"></a>
             </div>
             <div class="image">
               <img
                 class="size"
                 src="imgs/product1.webp"
-                alt=""
+                alt="bag of roasted coffee beans"
                 loading="lazy"
               />
             </div>
             <div class="content">
-              <h3>fresh coffee</h3>
+              <h3>roasted coffee beans</h3>
               <div class="stars">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -229,15 +195,15 @@
           </div>
           <div class="box">
             <div class="icons">
-              <a href="#" class="fas fa-shopping-cart"></a>
-              <a href="#" class="fas fa-heart"></a>
-              <a href="#" class="fas fa-eye"></a>
+              <a href="#" class="fas fa-shopping-cart add-to-cart-btn" data-name="Ground Coffee" data-price="15.99" data-img="imgs/product2.webp" aria-label="add ground coffee to cart"></a>
+              <a href="#" class="fas fa-heart" aria-label="add to wishlist"></a>
+              <a href="#" class="fas fa-eye" aria-label="quick view"></a>
             </div>
             <div class="image">
-              <img src="imgs/product2.webp" alt="" loading="lazy" />
+              <img src="imgs/product2.webp" alt="bag of ground coffee" loading="lazy" />
             </div>
             <div class="content">
-              <h3>fresh coffee</h3>
+              <h3>ground coffee</h3>
               <div class="stars">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -250,15 +216,15 @@
           </div>
           <div class="box">
             <div class="icons">
-              <a href="#" class="fas fa-shopping-cart"></a>
-              <a href="#" class="fas fa-heart"></a>
-              <a href="#" class="fas fa-eye"></a>
+              <a href="#" class="fas fa-shopping-cart add-to-cart-btn" data-name="Cold Brew Concentrate" data-price="15.99" data-img="imgs/product3.webp" aria-label="add cold brew concentrate to cart"></a>
+              <a href="#" class="fas fa-heart" aria-label="add to wishlist"></a>
+              <a href="#" class="fas fa-eye" aria-label="quick view"></a>
             </div>
             <div class="image">
-              <img src="imgs/product3.webp" alt="" loading="lazy" />
+              <img src="imgs/product3.webp" alt="bottle of cold brew coffee concentrate" loading="lazy" />
             </div>
             <div class="content">
-              <h3>fresh coffee</h3>
+              <h3>cold brew concentrate</h3>
               <div class="stars">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -282,7 +248,7 @@
       data-aos-offset="0"
     >
       <section class="review" id="review">
-        <h1 class="heading">customer's <span>review</span></h1>
+        <h2 class="heading">customer's <span>review</span></h2>
         <div class="box-container">
           <div class="box">
             <p>
@@ -290,7 +256,7 @@
               their cappuccino is always rich and perfectly brewed. Highly
               recommended!"
             </p>
-            <img src="imgs/person1_optimized_.webp" alt="" loading="lazy" />
+            <img src="imgs/person1_optimized_.webp" alt="portrait of customer john doe" loading="lazy" />
             <h3>john doe</h3>
             <div class="stars">
               <i class="fas fa-star"></i>
@@ -306,7 +272,7 @@
               huge difference in taste, and the customer service is always
               top-notch!"
             </p>
-            <img src="imgs/person2_optimized_.webp" alt="" loading="lazy" />
+            <img src="imgs/person2_optimized_.webp" alt="portrait of customer jolua mohab" loading="lazy" />
             <h3>jolua mohab</h3>
             <div class="stars">
               <i class="fas fa-star"></i>
@@ -322,7 +288,7 @@
               the place has an amazing vibe. Definitely my favorite coffee
               spot."
             </p>
-            <img src="imgs/person3_optimized_.webp" alt="" loading="lazy" />
+            <img src="imgs/person3_optimized_.webp" alt="portrait of customer chric mork" loading="lazy" />
             <h3>chric mork</h3>
             <div class="stars">
               <i class="fas fa-star"></i>
@@ -343,6 +309,7 @@
       <div class="row">
         <iframe
           class="map"
+          title="our location on the map"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15077.676635784084!2d72.8506457906444!3d19.133120935821644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63b76f3de9b%3A0x1e1d1cd27f00b1f8!2sJogeshwari%20East%2C%20Mumbai%2C%20Maharashtra%2C%20India!5e0!3m2!1sen!2seg!4v1778498936808!5m2!1sen!2seg"
           allowfullscreen=""
           loading="lazy"
@@ -350,9 +317,33 @@
         ></iframe>
 
         <form id="whatsappForm">
-          <input type="text" id="userName" placeholder="name" required />
-          <input type="email" id="userEmail" placeholder="email" required />
-          <input type="tel" id="userPhone" placeholder="number" required />
+          <label for="userName" class="sr-only">name</label>
+          <input
+            type="text"
+            id="userName"
+            name="username"
+            placeholder="name"
+            aria-label="name"
+            required
+          />
+          <label for="userEmail" class="sr-only">email</label>
+          <input
+            type="email"
+            id="userEmail"
+            name="email"
+            placeholder="email"
+            aria-label="email"
+            required
+          />
+          <label for="userPhone" class="sr-only">phone number</label>
+          <input
+            type="tel"
+            id="userPhone"
+            name="phone"
+            placeholder="number"
+            aria-label="phone number"
+            required
+          />
 
           <button type="submit" class="btn">Contact Now</button>
         </form>
@@ -362,19 +353,19 @@
     <!-- blogs start-->
 
     <section class="blogs" id="blogs">
-      <h1 class="heading">our <span>blogs</span></h1>
+      <h2 class="heading">our <span>blogs</span></h2>
       <div class="box-container">
         <div class="box">
           <div class="image">
             <img
               src="imgs/nathan-dumlao-r-KfktlyBL0-unsplash_optimized_.webp"
-              alt=""
+              alt="cup of coffee with beans on a wooden table"
               loading="lazy"
             />
           </div>
           <div class="content">
             <a href="#" class="title">Health Benefits of Daily Coffee</a>
-            <span>by admin / 5st may, 2026</span>
+            <span>by admin / 5th May, 2026</span>
             <p>
               "Explore how drinking your favorite fresh coffee every morning can
               boost your energy, focus, and overall health."
@@ -386,13 +377,13 @@
           <div class="image">
             <img
               src="imgs/nathan-dumlao-XOhI_kW_TaM-unsplash_optimized_.webp"
-              alt=""
+              alt="assortment of raw coffee beans"
               loading="lazy"
             />
           </div>
           <div class="content">
             <a href="#" class="title">How to Choose Your Coffee Beans</a>
-            <span>by admin / 21st may, 2026</span>
+            <span>by admin / 21st May, 2026</span>
             <p>
               "Learn the difference between Arabica and Robusta beans, roast
               levels, and how to pick the perfect blend for your daily brew."
@@ -404,18 +395,17 @@
           <div class="image">
             <img
               src="imgs/fahmi-fakhrudin-nzyzAUsbV0M-unsplash_optimized_.webp"
-              alt=""
+              alt="barista pouring milk to create latte art"
               loading="lazy"
             />
           </div>
           <div class="content">
             <a href="#" class="title">The Art of Perfect Latte Art</a>
-            <span>by admin / 10st june, 2026</span>
+            <span>by admin / 10th June, 2026</span>
             <p>
               "Discover the secret techniques and skills behind creating
               beautiful latte art designs at home like a professional barista."
             </p>
-            <br><br><br>
             <a href="#" class="btn">read more</a>
           </div>
         </div>
@@ -429,23 +419,30 @@
         <a
           href="https://www.facebook.com/share/183WQyJ9Zf/"
           target="_blank"
+          rel="noopener noreferrer"
           class="fab fa-facebook-f"
+          aria-label="facebook"
         ></a>
         <a
           href="https://wa.me/201157700392"
           target="_blank"
+          rel="noopener noreferrer"
           class="fab fa-whatsapp"
+          aria-label="whatsapp"
         ></a>
 
+        <!-- TODO: replace with the real LinkedIn profile URL before launch -->
         <a
           href="https://linkedin.com/in/"
           target="_blank"
+          rel="noopener noreferrer"
           class="fab fa-linkedin"
+          aria-label="linkedin"
         ></a>
       </div>
 
       <div class="links">
-        <a href="#">home</a>
+        <a href="#home">home</a>
         <a href="#about">about</a>
         <a href="#menu">menu</a>
         <a href="#products">products</a>
@@ -455,8 +452,10 @@
       </div>
 
       <div class="credit">
-        created by <span>youssef joo</span> | all rights reservied
+        created by <span>youssef joo</span> | all rights reserved
       </div>
+
+      <a href="#" class="up" data-aos="zoom-in"><i class="fa-solid fa-arrow-up"></i></a>
     </footer>
 
     <!-- footer end-->
@@ -465,6 +464,6 @@
     <script>
       AOS.init();
     </script>
-    <script src="srcipt.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

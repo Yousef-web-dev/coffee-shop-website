@@ -16,7 +16,6 @@
   text-decoration: none;
   box-sizing: border-box;
   text-transform: capitalize;
-  transition: 2s liner;
 }
 
 html {
@@ -27,7 +26,7 @@ html {
 }
 
 html::-webkit-scrollbar {
-  width: .8rem;
+  width: 0.8rem;
 }
 
 html::-webkit-scrollbar-track {
@@ -84,6 +83,7 @@ section {
   left: 0;
   right: 0;
   z-index: 1000;
+  transition: transform .4s;
 }
 
 .header .logo img {
@@ -100,7 +100,8 @@ section {
   transition: 0.5s;
 }
 
-.header .navbar a:hover,.header .navbar a.active  {
+.header .navbar a:hover,
+.header .navbar a.active {
   color: var(--main-color);
   border-bottom: 0.1rem solid var(--main-color);
 }
@@ -148,7 +149,7 @@ section {
   background: #fff;
   transform: scale(0);
   transform-origin: top;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .header .search-form.active {
@@ -231,6 +232,13 @@ section {
   color: var(--main-color);
 }
 
+.header .cart-items-container .empty-cart {
+  color: var(--black);
+  font-size: 1.6rem;
+  text-align: center;
+  padding: 2rem 0;
+}
+
 .header .cart-items-container .btn {
   width: 100%;
   justify-content: center;
@@ -247,7 +255,7 @@ section {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background-image: url('imgs/home.webp');
+  background-image: url("imgs/home.webp");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -256,7 +264,7 @@ section {
   max-height: 60rem;
 }
 
-.home .content h3 {
+.home .content h1 {
   font-size: 6rem;
   text-transform: uppercase;
   color: #fff;
@@ -323,7 +331,6 @@ section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   gap: 1.5rem;
-
 }
 .menu .box-container .box {
   padding: 5rem;
@@ -483,10 +490,23 @@ section {
 }
 .contact .row .map {
   flex: 1 1 45rem;
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
   height: 70vh;
   object-fit: cover;
 }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* Container Form Layout */
 #whatsappForm {
   background-color: #0f1117; /* خلفية الفورم الغامقة */
@@ -498,7 +518,7 @@ section {
   flex-direction: column;
   gap: 20px; /* المسافة بين المدخلات */
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    flex: 1 1 45rem;
+  flex: 1 1 45rem;
 }
 
 /* Style for Inputs */
@@ -512,7 +532,13 @@ section {
   font-size: 15px;
   outline: none;
   box-sizing: border-box;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+#whatsappForm input {
+  text-transform: none;
 }
 
 /* Placeholder Styling */
@@ -537,7 +563,9 @@ section {
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
   margin-top: 10px;
   transition: 0.3s;
 }
@@ -584,14 +612,12 @@ section {
 }
 .blogs .box-container .box .content {
   padding: 2.5rem;
-  
 }
 .blogs .box-container .box .content .title {
   font-size: 2.5rem;
   line-height: 1.5;
   color: #fff;
-    transition: 0.3s;
-    
+  transition: 0.3s;
 }
 .blogs .box-container .box .content .title:hover {
   color: var(--main-color);
@@ -667,6 +693,34 @@ section {
 
 .footer .credit span {
   color: var(--main-color);
+}
+.up {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--main-color);
+  color: var(--black);
+  font-size: 22px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 4;
+  transition: 0.4s;
+}
+.up.active {
+  opacity: 1;
+  visibility: visible;
+
+}
+
+.up:hover {
+  background-color: #7b809a;
+  color: #b59b6d;
 }
 
 /* footer end */
