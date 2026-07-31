@@ -258,6 +258,7 @@ section {
   background-image: url("imgs/home.webp");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 
 .home .content {
