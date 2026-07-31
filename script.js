@@ -1,51 +1,150 @@
-//************************** */
+// ================= Navigation & Sidebars Toggle =================
+const navbar = document.querySelector(".navbar");
+const searchForm = document.querySelector(".search-form");
+const cartItem = document.querySelector(".cart-items-container");
+const wishlistContainer = document.querySelector(".wishlist-container");
 
-let navbar = document.querySelector(".navbar");
-let searchForm = document.querySelector(".search-form");
-let cartItem = document.querySelector(".cart-items-container");
-let menuBtn = document.getElementById("menu-btn");
-let searchBtn = document.getElementById("search-btn");
-let cartBtn = document.getElementById("cart-btn");
+const menuBtn = document.getElementById("menu-btn");
+const searchBtn = document.getElementById("search-btn");
+const cartBtn = document.getElementById("cart-btn");
+const heartBtn = document.getElementById("heart-btn");
 
-menuBtn.addEventListener("click", () => {
-  navbar.classList.toggle("active");
-  searchForm.classList.remove("active");
-  cartItem.classList.remove("active");
+menuBtn?.addEventListener("click", () => {
+  navbar?.classList.toggle("active");
+  searchForm?.classList.remove("active");
+  cartItem?.classList.remove("active");
+  wishlistContainer?.classList.remove("active");
 });
 
-searchBtn.addEventListener("click", () => {
-  searchForm.classList.toggle("active");
-  navbar.classList.remove("active");
-  cartItem.classList.remove("active");
+searchBtn?.addEventListener("click", () => {
+  searchForm?.classList.toggle("active");
+  navbar?.classList.remove("active");
+  cartItem?.classList.remove("active");
+  wishlistContainer?.classList.remove("active");
 });
 
-cartBtn.addEventListener("click", () => {
-  cartItem.classList.toggle("active");
-  navbar.classList.remove("active");
-  searchForm.classList.remove("active");
+cartBtn?.addEventListener("click", () => {
+  cartItem?.classList.toggle("active");
+  navbar?.classList.remove("active");
+  searchForm?.classList.remove("active");
+  wishlistContainer?.classList.remove("active");
 });
 
-onscroll = () => {
-  navbar.classList.remove("active");
-  searchForm.classList.remove("active");
-  cartItem.classList.remove("active");
-};
+// فتح وإغلاق قائمة المفضلة من الهيدر
+heartBtn?.addEventListener("click", () => {
+  wishlistContainer?.classList.toggle("active");
+  navbar?.classList.remove("active");
+  searchForm?.classList.remove("active");
+  cartItem?.classList.remove("active");
+});
 
-addEventListener("scroll", () => {
+window.addEventListener("scroll", () => {
+  navbar?.classList.remove("active");
+  searchForm?.classList.remove("active");
+  cartItem?.classList.remove("active");
+  wishlistContainer?.classList.remove("active");
+});
 
-  let up = document.querySelector(".up");
+// ================= Wishlist Functionality (Secure DOM) =================
+const wishlistBtns = document.querySelectorAll(".add-to-wishlist-btn");
+const heartCountElement = document.getElementById("heart-count");
 
-  if (scrollY > 50) {
+let wishlist = [];
 
-    up.classList.add("active");
-  } else {
+function renderWishlist() {
+  if (!wishlistContainer) return;
 
-    up.classList.remove("active");
+  // تفريغ العناصر القديمة بأمان
+  while (wishlistContainer.firstChild) {
+    wishlistContainer.removeChild(wishlistContainer.firstChild);
   }
+
+  if (wishlist.length === 0) {
+    const emptyMsg = document.createElement("p");
+    emptyMsg.classList.add("empty-wishlist");
+    emptyMsg.textContent = "Your Wishlist Is Empty";
+    wishlistContainer.appendChild(emptyMsg);
+  } else {
+    wishlist.forEach((item, index) => {
+      const itemEl = document.createElement("div");
+      itemEl.classList.add("wishlist-item");
+
+      const removeBtn = document.createElement("span");
+      removeBtn.classList.add("fas", "fa-times");
+      removeBtn.setAttribute("data-index", String(index));
+      removeBtn.setAttribute("role", "button");
+
+      const img = document.createElement("img");
+      img.src = item.img;
+      img.alt = item.name;
+
+      const content = document.createElement("div");
+      content.classList.add("content");
+
+      const title = document.createElement("h3");
+      title.textContent = item.name; // آمن تماماً ضد XSS
+
+      const price = document.createElement("div");
+      price.classList.add("price");
+      price.textContent = `$${item.price}`;
+
+      content.appendChild(title);
+      content.appendChild(price);
+
+      itemEl.appendChild(removeBtn);
+      itemEl.appendChild(img);
+      itemEl.appendChild(content);
+
+      wishlistContainer.appendChild(itemEl);
+    });
+  }
+
+  // تحديث العداد
+  if (heartCountElement) {
+    heartCountElement.textContent = String(wishlist.length);
+  }
+
+  // حذف عنصر من المفضلة
+  wishlistContainer.querySelectorAll(".fa-times").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      const index = Number(e.target.getAttribute("data-index"));
+      wishlist.splice(index, 1);
+      renderWishlist();
+    });
+  });
+}
+
+// إضافة المنتج للمفضلة
+wishlistBtns.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const box = btn.closest(".box");
+    if (!box) return;
+
+    const nameEl = box.querySelector("h3");
+    const name = nameEl ? nameEl.textContent.trim() : "Product";
+
+    const priceContainer = box.querySelector(".price");
+    let priceText = "0.00";
+    if (priceContainer) {
+      const clonePrice = priceContainer.cloneNode(true);
+      const span = clonePrice.querySelector("span");
+      if (span) span.remove();
+      priceText = clonePrice.textContent.trim().replace("$", "");
+    }
+
+    const imgEl = box.querySelector("img");
+    const img = imgEl ? imgEl.getAttribute("src") : "";
+
+    wishlist.push({ name, price: priceText, img });
+    renderWishlist();
+  });
 });
 
-// ===================== cart =====================
+renderWishlist();
 
+// ================= Cart Functionality (Secure DOM) =================
 const addToCartButtons = document.querySelectorAll(".add-to-cart-btn");
 const cartElement = document.getElementById("cart-count");
 const cartItemsContainer = document.querySelector(".cart-items-container");
@@ -53,7 +152,8 @@ const cartItemsContainer = document.querySelector(".cart-items-container");
 let cart = [];
 
 function renderCart() {
-  // clear current items safely (no innerHTML)
+  if (!cartItemsContainer) return;
+
   while (cartItemsContainer.firstChild) {
     cartItemsContainer.removeChild(cartItemsContainer.firstChild);
   }
@@ -61,7 +161,7 @@ function renderCart() {
   if (cart.length === 0) {
     const emptyMsg = document.createElement("p");
     emptyMsg.classList.add("empty-cart");
-    emptyMsg.textContent = "your cart is empty";
+    emptyMsg.textContent = "Your Cart Is Empty";
     cartItemsContainer.appendChild(emptyMsg);
   } else {
     cart.forEach((item, index) => {
@@ -72,12 +172,10 @@ function renderCart() {
       removeBtn.classList.add("fas", "fa-times");
       removeBtn.setAttribute("data-index", String(index));
       removeBtn.setAttribute("role", "button");
-      removeBtn.setAttribute("aria-label", "remove item from cart");
 
       const img = document.createElement("img");
       img.src = item.img;
       img.alt = item.name;
-      img.loading = "lazy";
 
       const content = document.createElement("div");
       content.classList.add("content");
@@ -106,13 +204,14 @@ function renderCart() {
   checkoutBtn.textContent = "checkout now";
   cartItemsContainer.appendChild(checkoutBtn);
 
-  cartElement.textContent = cart.length;
+  if (cartElement) {
+    cartElement.textContent = String(cart.length);
+  }
 
-  // remove item listeners
   cartItemsContainer.querySelectorAll(".fa-times").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const i = Number(btn.getAttribute("data-index"));
-      cart.splice(i, 1);
+    btn.addEventListener("click", (e) => {
+      const index = Number(e.target.getAttribute("data-index"));
+      cart.splice(index, 1);
       renderCart();
     });
   });
@@ -126,60 +225,11 @@ addToCartButtons.forEach((button) => {
     const price = button.getAttribute("data-price");
     const img = button.getAttribute("data-img");
 
-    cart.push({ name, price, img });
-    renderCart();
-
-    const originalText = button.textContent;
-    button.textContent = "Added! ✓";
-    setTimeout(() => {
-      button.textContent = originalText;
-    }, 1500);
+    if (name && price && img) {
+      cart.push({ name, price, img });
+      renderCart();
+    }
   });
 });
 
 renderCart();
-
-// ===================== search =====================
-
-const searchBox = document.getElementById("search-box");
-
-searchBox.addEventListener("keydown", (e) => {
-  if (e.key !== "Enter") return;
-  e.preventDefault();
-
-  const query = searchBox.value.trim().toLowerCase();
-  if (!query) return;
-
-  const searchableSelectors = ".menu h3, .products .content h3, .blogs .title";
-  const results = Array.from(document.querySelectorAll(searchableSelectors));
-
-  const match = results.find((el) => el.textContent.toLowerCase().includes(query));
-
-  if (match) {
-    const section = match.closest("section");
-    section.scrollIntoView({ behavior: "smooth" });
-    searchForm.classList.remove("active");
-  } else {
-    alert("No results found for \"" + searchBox.value + "\"");
-  }
-});
-
-// ===================== contact =====================
-
-document.getElementById("whatsappForm").addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  const name = document.getElementById("userName").value;
-  const email = document.getElementById("userEmail").value;
-  const phone = document.getElementById("userPhone").value;
-  const myPhoneNumber = "201157700392";
-
-  const message =
-    `Hello, I'd like to get in touch with you :%0A ` +
-    `👤 *Name:* ${encodeURIComponent(name)}%0A` +
-    `✉️ *Email:* ${encodeURIComponent(email)}%0A` +
-    `📱 *Phone:* ${encodeURIComponent(phone)}%0A`;
-
-  const whatsappUrl = `https://wa.me/${myPhoneNumber}?text=${message}`;
-  window.open(whatsappUrl, "_blank");
-});

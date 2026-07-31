@@ -14,7 +14,7 @@
       referrerpolicy="no-referrer"
     />
     <!-- fav -->
-    <link rel="shortcut icon" href="latte-art.png" type="image/x-icon">
+    <link rel="shortcut icon" href="latte-art.png" type="image/x-icon" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link
       rel="shortcut icon"
@@ -30,9 +30,7 @@
   </head>
   <body>
     <!-- header starts -->
-    <header
-      class="header"
-    >
+    <header class="header">
       <a href="#" class="logo">
         <img src="imgs/logo_optimized_.webp" alt="logo" loading="lazy" />
       </a>
@@ -48,8 +46,13 @@
       </nav>
 
       <div class="icons">
+        <div class="fas fa-heart" id="heart-btn"></div>
+        <span id="heart-count" class="heart-badge">0</span>
+
         <div class="fas fa-shopping-cart" id="cart-btn"></div>
-        <span id="cart-count">0</span>
+
+        <span id="cart-count" class="two">0</span>
+
         <div class="fas fa-search" id="search-btn"></div>
         <div class="fas fa-bars" id="menu-btn"></div>
       </div>
@@ -59,9 +62,9 @@
         <label for="search-box" class="fas fa-search"></label>
       </div>
 
-      <div class="cart-items-container">
-        <!-- Cart items are rendered dynamically by script.js -->
-      </div>
+      <div class="cart-items-container"></div>
+
+      <div class="wishlist-container"></div>
     </header>
     <!-- header end -->
 
@@ -88,7 +91,11 @@
       <h2 class="heading"><span>about </span>us</h2>
       <div class="row">
         <div class="image">
-          <img src="imgs/about.webp" alt="coffee shop interior" loading="lazy" />
+          <img
+            src="imgs/about.webp"
+            alt="coffee shop interior"
+            loading="lazy"
+          />
         </div>
 
         <div
@@ -123,40 +130,106 @@
         <h2 class="heading">our <span>menu</span></h2>
         <div class="box-container">
           <div class="box" data-id="product-01">
-            <img src="imgs/minu1_optimized_.webp" alt="espresso coffee cup" loading="lazy" />
+            <img
+              src="imgs/minu1_optimized_.webp"
+              alt="espresso coffee cup"
+              loading="lazy"
+            />
             <h3>espresso</h3>
             <div class="price">$15.99 <span>$20.99</span></div>
-            <a href="#menu" class="btn add-to-cart-btn" data-name="Espresso" data-price="15.99" data-img="imgs/minu1_optimized_.webp">add to cart</a>
+            <a
+              href="#menu"
+              class="btn add-to-cart-btn"
+              data-name="Espresso"
+              data-price="15.99"
+              data-img="imgs/minu1_optimized_.webp"
+              >add to cart</a
+            >
           </div>
           <div class="box" data-id="product-02">
-            <img src="imgs/minu2_optimized_.webp" alt="cappuccino coffee cup" loading="lazy" />
+            <img
+              src="imgs/minu2_optimized_.webp"
+              alt="cappuccino coffee cup"
+              loading="lazy"
+            />
             <h3>cappuccino</h3>
             <div class="price">$15.99 <span>$20.99</span></div>
-            <a href="#menu" class="btn add-to-cart-btn" data-name="Cappuccino" data-price="15.99" data-img="imgs/minu2_optimized_.webp">add to cart</a>
+            <a
+              href="#menu"
+              class="btn add-to-cart-btn"
+              data-name="Cappuccino"
+              data-price="15.99"
+              data-img="imgs/minu2_optimized_.webp"
+              >add to cart</a
+            >
           </div>
           <div class="box" data-id="product-03">
-            <img src="imgs/minu3_optimized_.webp" alt="latte coffee cup" loading="lazy" />
+            <img
+              src="imgs/minu3_optimized_.webp"
+              alt="latte coffee cup"
+              loading="lazy"
+            />
             <h3>latte</h3>
             <div class="price">$15.99 <span>$20.99</span></div>
-            <a href="#menu" class="btn add-to-cart-btn" data-name="Latte" data-price="15.99" data-img="imgs/minu3_optimized_.webp">add to cart</a>
+            <a
+              href="#menu"
+              class="btn add-to-cart-btn"
+              data-name="Latte"
+              data-price="15.99"
+              data-img="imgs/minu3_optimized_.webp"
+              >add to cart</a
+            >
           </div>
           <div class="box" data-id="product-04">
-            <img src="imgs/minu4_optimized_.webp" alt="mocha coffee cup" loading="lazy" />
+            <img
+              src="imgs/minu4_optimized_.webp"
+              alt="mocha coffee cup"
+              loading="lazy"
+            />
             <h3>mocha</h3>
             <div class="price">$15.99 <span>$20.99</span></div>
-            <a href="#menu" class="btn add-to-cart-btn" data-name="Mocha" data-price="15.99" data-img="imgs/minu4_optimized_.webp">add to cart</a>
+            <a
+              href="#menu"
+              class="btn add-to-cart-btn"
+              data-name="Mocha"
+              data-price="15.99"
+              data-img="imgs/minu4_optimized_.webp"
+              >add to cart</a
+            >
           </div>
           <div class="box" data-id="product-05">
-            <img src="imgs/minu5_optimized_.webp" alt="americano coffee cup" loading="lazy" />
+            <img
+              src="imgs/minu5_optimized_.webp"
+              alt="americano coffee cup"
+              loading="lazy"
+            />
             <h3>americano</h3>
             <div class="price">$15.99 <span>$20.99</span></div>
-            <a href="#menu" class="btn add-to-cart-btn" data-name="Americano" data-price="15.99" data-img="imgs/minu5_optimized_.webp">add to cart</a>
+            <a
+              href="#menu"
+              class="btn add-to-cart-btn"
+              data-name="Americano"
+              data-price="15.99"
+              data-img="imgs/minu5_optimized_.webp"
+              >add to cart</a
+            >
           </div>
           <div class="box" data-id="product-06">
-            <img src="imgs/minu6_optimized_.webp" alt="macchiato coffee cup" loading="lazy" />
+            <img
+              src="imgs/minu6_optimized_.webp"
+              alt="macchiato coffee cup"
+              loading="lazy"
+            />
             <h3>macchiato</h3>
             <div class="price">$15.99 <span>$20.99</span></div>
-            <a href="#menu" class="btn add-to-cart-btn" data-name="Macchiato" data-price="15.99" data-img="imgs/minu6_optimized_.webp">add to cart</a>
+            <a
+              href="#menu"
+              class="btn add-to-cart-btn"
+              data-name="Macchiato"
+              data-price="15.99"
+              data-img="imgs/minu6_optimized_.webp"
+              >add to cart</a
+            >
           </div>
         </div>
       </section>
@@ -171,8 +244,19 @@
         <div class="box-container">
           <div class="box">
             <div class="icons">
-              <a href="#" class="fas fa-shopping-cart add-to-cart-btn" data-name="Roasted Coffee Beans" data-price="15.99" data-img="imgs/product1.webp" aria-label="add roasted coffee beans to cart"></a>
-              <a href="#" class="fas fa-heart" aria-label="add to wishlist"></a>
+              <a
+                href="#"
+                class="fas fa-shopping-cart add-to-cart-btn"
+                data-name="Roasted Coffee Beans"
+                data-price="15.99"
+                data-img="imgs/product1.webp"
+                aria-label="add roasted coffee beans to cart"
+              ></a>
+              <a
+                href="#"
+                class="fas fa-heart add-to-wishlist-btn"
+                aria-label="add to wishlist"
+              ></a>
               <a href="#" class="fas fa-eye" aria-label="quick view"></a>
             </div>
             <div class="image">
@@ -197,12 +281,27 @@
           </div>
           <div class="box">
             <div class="icons">
-              <a href="#" class="fas fa-shopping-cart add-to-cart-btn" data-name="Ground Coffee" data-price="15.99" data-img="imgs/product2.webp" aria-label="add ground coffee to cart"></a>
-              <a href="#" class="fas fa-heart" aria-label="add to wishlist"></a>
+              <a
+                href="#"
+                class="fas fa-shopping-cart add-to-cart-btn"
+                data-name="Ground Coffee"
+                data-price="15.99"
+                data-img="imgs/product2.webp"
+                aria-label="add ground coffee to cart"
+              ></a>
+              <a
+                href="#"
+                class="fas fa-heart add-to-wishlist-btn"
+                aria-label="add to wishlist"
+              ></a>
               <a href="#" class="fas fa-eye" aria-label="quick view"></a>
             </div>
             <div class="image">
-              <img src="imgs/product2.webp" alt="bag of ground coffee" loading="lazy" />
+              <img
+                src="imgs/product2.webp"
+                alt="bag of ground coffee"
+                loading="lazy"
+              />
             </div>
             <div class="content">
               <h3>ground coffee</h3>
@@ -218,12 +317,27 @@
           </div>
           <div class="box">
             <div class="icons">
-              <a href="#" class="fas fa-shopping-cart add-to-cart-btn" data-name="Cold Brew Concentrate" data-price="15.99" data-img="imgs/product3.webp" aria-label="add cold brew concentrate to cart"></a>
-              <a href="#" class="fas fa-heart" aria-label="add to wishlist"></a>
+              <a
+                href="#"
+                class="fas fa-shopping-cart add-to-cart-btn"
+                data-name="Cold Brew Concentrate"
+                data-price="15.99"
+                data-img="imgs/product3.webp"
+                aria-label="add cold brew concentrate to cart"
+              ></a>
+              <a
+                href="#"
+                class="fas fa-heart add-to-wishlist-btn"
+                aria-label="add to wishlist"
+              ></a>
               <a href="#" class="fas fa-eye" aria-label="quick view"></a>
             </div>
             <div class="image">
-              <img src="imgs/product3.webp" alt="bottle of cold brew coffee concentrate" loading="lazy" />
+              <img
+                src="imgs/product3.webp"
+                alt="bottle of cold brew coffee concentrate"
+                loading="lazy"
+              />
             </div>
             <div class="content">
               <h3>cold brew concentrate</h3>
@@ -258,7 +372,11 @@
               their cappuccino is always rich and perfectly brewed. Highly
               recommended!"
             </p>
-            <img src="imgs/person1_optimized_.webp" alt="portrait of customer john doe" loading="lazy" />
+            <img
+              src="imgs/person1_optimized_.webp"
+              alt="portrait of customer john doe"
+              loading="lazy"
+            />
             <h3>john doe</h3>
             <div class="stars">
               <i class="fas fa-star"></i>
@@ -274,7 +392,11 @@
               huge difference in taste, and the customer service is always
               top-notch!"
             </p>
-            <img src="imgs/person2_optimized_.webp" alt="portrait of customer jolua mohab" loading="lazy" />
+            <img
+              src="imgs/person2_optimized_.webp"
+              alt="portrait of customer jolua mohab"
+              loading="lazy"
+            />
             <h3>jolua mohab</h3>
             <div class="stars">
               <i class="fas fa-star"></i>
@@ -290,7 +412,11 @@
               the place has an amazing vibe. Definitely my favorite coffee
               spot."
             </p>
-            <img src="imgs/person3_optimized_.webp" alt="portrait of customer chric mork" loading="lazy" />
+            <img
+              src="imgs/person3_optimized_.webp"
+              alt="portrait of customer chric mork"
+              loading="lazy"
+            />
             <h3>chric mork</h3>
             <div class="stars">
               <i class="fas fa-star"></i>
@@ -454,10 +580,12 @@
       </div>
 
       <div class="credit">
-        created by <span>youssef joo</span> | all rights reserved
+        created by <span>You-Web-Dev</span> | all rights reserved
       </div>
 
-      <a href="#" class="up" data-aos="zoom-in"><i class="fa-solid fa-arrow-up"></i></a>
+      <a href="#" class="up" data-aos="zoom-in"
+        ><i class="fa-solid fa-arrow-up"></i
+      ></a>
     </footer>
 
     <!-- footer end-->
